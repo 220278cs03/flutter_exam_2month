@@ -4,7 +4,7 @@ import 'MainPage.dart';
 import 'Page_4.dart';
 
 class Page_3 extends StatefulWidget {
- const Page_3({Key? key }) : super(key: key);
+  const Page_3({Key? key}) : super(key: key);
 
   @override
   State<Page_3> createState() => _Page_3State();
@@ -27,12 +27,12 @@ class _Page_3State extends State<Page_3> {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           padding:
-          const EdgeInsets.only(left: 30, top: 38, right: 30, bottom: 61),
+              const EdgeInsets.only(left: 30, top: 38, right: 30, bottom: 61),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               InkWell(
-                child: Icon(
+                child: const Icon(
                   Icons.arrow_back,
                   color: Colors.black,
                 ),
@@ -40,17 +40,17 @@ class _Page_3State extends State<Page_3> {
                   Navigator.pop(context);
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 42,
               ),
-              Text(
+              const Text(
                 "Forgot Password?",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 30,
                     fontWeight: FontWeight.w700),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Row(
@@ -58,26 +58,28 @@ class _Page_3State extends State<Page_3> {
                 children: [
                   InkWell(
                     child: Container(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           left: 16, top: 9, bottom: 9, right: 40),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(30)),
                           boxShadow: [
                             BoxShadow(
                                 blurRadius: 4,
                                 spreadRadius: 0,
-                                offset: Offset(0, 4),
-                                color: Color(0xff000000).withOpacity(0.25))
+                                offset: const Offset(0, 4),
+                                color:
+                                    const Color(0xff000000).withOpacity(0.25))
                           ]),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset('googlr.png'),
-                            SizedBox(
+                            const SizedBox(
                               width: 23,
                             ),
-                            Text(
+                            const Text(
                               'Google',
                               style: TextStyle(
                                   color: Colors.black,
@@ -89,26 +91,28 @@ class _Page_3State extends State<Page_3> {
                   ),
                   InkWell(
                     child: Container(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           left: 23, top: 9, bottom: 9, right: 30),
                       decoration: BoxDecoration(
-                          color: Color(0xff3498DB),
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: const Color(0xff3498DB),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(30)),
                           boxShadow: [
                             BoxShadow(
                                 blurRadius: 4,
                                 spreadRadius: 0,
-                                offset: Offset(0, 4),
-                                color: Color(0xff000000).withOpacity(0.25))
+                                offset: const Offset(0, 4),
+                                color:
+                                    const Color(0xff000000).withOpacity(0.25))
                           ]),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset('facebook.png'),
-                            SizedBox(
+                            const SizedBox(
                               width: 23,
                             ),
-                            Text(
+                            const Text(
                               'Facebook',
                               style: TextStyle(
                                   color: Colors.white,
@@ -120,26 +124,26 @@ class _Page_3State extends State<Page_3> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 37,
               ),
-              Center(
+              const Center(
                   child: Text(
-                    "Or log in using",
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-                  )),
-              SizedBox(
+                "Or log in using",
+                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+              )),
+              const SizedBox(
                 height: 37,
               ),
               Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    borderRadius: const BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                          color: Color(0xff000000).withOpacity(0.25),
+                          color: const Color(0xff000000).withOpacity(0.25),
                           spreadRadius: 0,
                           blurRadius: 4,
-                          offset: Offset(0, 4)),
+                          offset: const Offset(0, 4)),
                     ]),
                 child: TextFormField(
                   controller: mail,
@@ -147,47 +151,48 @@ class _Page_3State extends State<Page_3> {
                     isMailEmpty = false;
                     setState(() {});
                   },
-                  style: TextStyle(color: Color(0xff000000).withOpacity(0.5)),
+                  style: TextStyle(
+                      color: const Color(0xff000000).withOpacity(0.5)),
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30)),
                           borderSide: BorderSide.none),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(30)),
                           borderSide: BorderSide.none),
                       filled: true,
                       fillColor: Colors.white,
                       hintText: "Mail",
                       hintStyle: TextStyle(
-                          color: Color(0xff000000).withOpacity(0.5),
+                          color: const Color(0xff000000).withOpacity(0.5),
                           fontWeight: FontWeight.w400,
                           fontSize: 12),
                       contentPadding:
-                      EdgeInsets.only(left: 44, top: 18, bottom: 18)),
+                          const EdgeInsets.only(left: 44, top: 18, bottom: 18)),
                 ),
               ),
               isMailEmpty
-                  ? Padding(
-                padding: const EdgeInsets.only(left: 18.0, top: 8),
-                child: Text(
-                  "Enter your email",
-                  style: TextStyle(color: Colors.red),
-                ),
-              )
-                  : SizedBox.shrink(),
-              SizedBox(
+                  ? const Padding(
+                      padding: EdgeInsets.only(left: 18.0, top: 8),
+                      child: Text(
+                        "Enter your email",
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    )
+                  : const SizedBox.shrink(),
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    borderRadius: const BorderRadius.all(Radius.circular(30)),
                     boxShadow: [
                       BoxShadow(
-                          color: Color(0xff000000).withOpacity(0.25),
+                          color: const Color(0xff000000).withOpacity(0.25),
                           spreadRadius: 0,
                           blurRadius: 4,
-                          offset: Offset(0, 4)),
+                          offset: const Offset(0, 4)),
                     ]),
                 child: TextFormField(
                     obscureText: visionIcon,
@@ -196,22 +201,23 @@ class _Page_3State extends State<Page_3> {
                       isPasswordEmpty = false;
                       setState(() {});
                     },
-                    style: TextStyle(color: Color(0xff000000).withOpacity(0.5)),
+                    style: TextStyle(
+                        color: const Color(0xff000000).withOpacity(0.5)),
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30)),
                             borderSide: BorderSide.none),
-                        focusedBorder: OutlineInputBorder(
+                        focusedBorder: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30)),
                             borderSide: BorderSide.none),
                         filled: true,
                         fillColor: Colors.white,
                         hintText: "Password",
                         hintStyle: TextStyle(
-                            color: Color(0xff000000).withOpacity(0.5),
+                            color: const Color(0xff000000).withOpacity(0.5),
                             fontWeight: FontWeight.w400,
                             fontSize: 12),
-                        contentPadding: EdgeInsets.only(
+                        contentPadding: const EdgeInsets.only(
                           left: 44,
                           top: 18,
                           bottom: 18,
@@ -224,52 +230,51 @@ class _Page_3State extends State<Page_3> {
                                 setState(() {});
                               },
                               child: visionIcon
-                                  ? Icon(Icons.visibility,
-                                  color: Color(0xff00CEC9))
-                                  : Icon(Icons.visibility_off,
-                                  color: Color(0xffC0C0C0))),
-                        )
-                    )),
+                                  ? const Icon(Icons.visibility,
+                                      color: Color(0xff00CEC9))
+                                  : const Icon(Icons.visibility_off,
+                                      color: Color(0xffC0C0C0))),
+                        ))),
               ),
               isPasswordEmpty
-                  ? Padding(
-                padding: const EdgeInsets.only(left: 18.0, top: 8),
-                child: Text(
-                  "Enter your password",
-                  style: TextStyle(color: Colors.red),
-                ),
-              )
-                  : SizedBox.shrink(),
-              SizedBox(
+                  ? const Padding(
+                      padding: EdgeInsets.only(left: 18.0, top: 8),
+                      child: Text(
+                        "Enter your password",
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    )
+                  : const SizedBox.shrink(),
+              const SizedBox(
                 height: 20,
               ),
-
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               InkWell(
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 200),
-                  padding: EdgeInsets.symmetric(vertical: 15),
+                  margin: const EdgeInsets.only(bottom: 200),
+                  padding: const EdgeInsets.symmetric(vertical: 15),
                   decoration: BoxDecoration(
-                      color: Color(0xff00CEC9),
+                      color: const Color(0xff00CEC9),
                       boxShadow: [
                         BoxShadow(
                             blurRadius: 4,
                             spreadRadius: 0,
-                            offset: Offset(0, 4),
-                            color: Color(0xff000000).withOpacity(0.25))
+                            offset: const Offset(0, 4),
+                            color: const Color(0xff000000).withOpacity(0.25))
                       ],
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: Center(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(30))),
+                  child: const Center(
                       child: Text(
-                        'Log in',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16),
-                      )),
+                    'Log in',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16),
+                  )),
                 ),
                 onTap: () {
                   if (mail.text.isEmpty) {
@@ -280,8 +285,9 @@ class _Page_3State extends State<Page_3> {
                     isPasswordEmpty = true;
                     setState(() {});
                   }
-                  if(mail.text.isNotEmpty && password.text.isNotEmpty){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=> MainPage()));
+                  if (mail.text.isNotEmpty && password.text.isNotEmpty) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const MainPage()));
                   }
                 },
               ),
@@ -289,21 +295,22 @@ class _Page_3State extends State<Page_3> {
                 child: GestureDetector(
                   child: RichText(
                       text: const TextSpan(children: [
-                        TextSpan(
-                            text: 'Don’t have an account yet? ',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black)),
-                        TextSpan(
-                            text: 'Sign up',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff00CEC9))),
-                      ])),
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>Page_4()));
+                    TextSpan(
+                        text: 'Don’t have an account yet? ',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black)),
+                    TextSpan(
+                        text: 'Sign up',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff00CEC9))),
+                  ])),
+                  onTap: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Page_4()));
                   },
                 ),
               )

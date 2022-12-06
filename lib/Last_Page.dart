@@ -4,6 +4,7 @@ import 'models/mymodel.dart';
 
 class LastPage extends StatefulWidget {
   MyModel model;
+
   LastPage({Key? key, required this.model}) : super(key: key);
 
   @override
@@ -17,6 +18,7 @@ class _LastPageState extends State<LastPage> {
     'assets/hotel3.png'
   ];
   bool like = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,7 +28,7 @@ class _LastPageState extends State<LastPage> {
         children: [
           Container(
             height: 200,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('blur.png'), fit: BoxFit.cover),
               color: Colors.yellow,
@@ -37,7 +39,7 @@ class _LastPageState extends State<LastPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InkWell(
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back,
                       color: Colors.white,
                     ),
@@ -49,18 +51,16 @@ class _LastPageState extends State<LastPage> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white, shape: BoxShape.circle),
                       child: Icon(
                         like ? Icons.favorite_border : Icons.favorite,
-                        color: Color(0xff00CEC9),
+                        color: const Color(0xff00CEC9),
                       ),
                     ),
-                    onTap: (){
+                    onTap: () {
                       like = !like;
-                      setState(() {
-
-                      });
+                      setState(() {});
                     },
                   )
                 ],
@@ -87,13 +87,13 @@ class _LastPageState extends State<LastPage> {
                               width: 148,
                               child: Text(
                                 widget.model.hotel_name,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 30, fontWeight: FontWeight.w700),
                               ),
                             ),
                             Text(
                               widget.model.hotel_cost,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w600),
                             ),
                           ],
@@ -102,64 +102,65 @@ class _LastPageState extends State<LastPage> {
                           children: [
                             Text(
                               widget.model.hotel_location,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 9),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 6,
                             ),
-                            Icon(Icons.location_on, color: Color(0xff00CEC9)),
-                            SizedBox(
+                            const Icon(Icons.location_on,
+                                color: Color(0xff00CEC9)),
+                            const SizedBox(
                               width: 6,
                             ),
                             Text(
                               widget.model.hotel_oriyenter,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 9),
                             ),
-                            Spacer(),
-                            Text(
+                            const Spacer(),
+                            const Text(
                               'Per Night',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 12),
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 21,
                         ),
                         Container(
                             height: 2,
                             width: MediaQuery.of(context).size.width,
-                            color: Color(0xffDFE6E9)),
-                        SizedBox(
+                            color: const Color(0xffDFE6E9)),
+                        const SizedBox(
                           height: 30,
                         ),
-                        Text(
+                        const Text(
                           'Hotel details',
                           style: TextStyle(
                               color: Color(0xff34495E),
                               fontSize: 16,
                               fontWeight: FontWeight.w600),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
-                        Text(
+                        const Text(
                           'This luxury and well-known hotel overlooking the Chao Phraya river is a 3-minute walk from the nearest ferry stop.',
                           style: TextStyle(
                               color: Color(0xff000000),
                               fontSize: 12,
                               fontWeight: FontWeight.w400),
                         ),
-                        Text(
+                        const Text(
                           '...Read more',
                           style: TextStyle(
                               color: Color(0xff00CEC9),
                               fontSize: 12,
                               fontWeight: FontWeight.w400),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Container(
@@ -167,13 +168,14 @@ class _LastPageState extends State<LastPage> {
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20)),
+                                  const BorderRadius.all(Radius.circular(20)),
                               boxShadow: [
                                 BoxShadow(
                                     spreadRadius: 0,
                                     blurRadius: 16,
-                                    offset: Offset(0, 0),
-                                    color: Color(0xff000000).withOpacity(0.25))
+                                    offset: const Offset(0, 0),
+                                    color: const Color(0xff000000)
+                                        .withOpacity(0.25))
                               ]),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -184,36 +186,40 @@ class _LastPageState extends State<LastPage> {
                                   children: [
                                     Text(
                                       "${widget.model.hotel_star_yes}",
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: FontWeight.w700,
                                           fontSize: 30),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 16,
                                     ),
                                     Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
+                                        const Text(
                                           "Review summary",
                                           style: TextStyle(
                                               fontWeight: FontWeight.w600,
                                               fontSize: 12),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 4,
                                         ),
                                         Row(
                                           children: [
-                                            for (int i = 0; i < widget.model.hotel_star_yes; i++)
-                                              Icon(
+                                            for (int i = 0;
+                                                i < widget.model.hotel_star_yes;
+                                                i++)
+                                              const Icon(
                                                 Icons.star,
                                                 color: Color(0xff00CEC9),
                                                 size: 15,
                                               ),
-                                            for (int i = 0; i < widget.model.hotel_start_no; i++)
-                                              Icon(
+                                            for (int i = 0;
+                                                i < widget.model.hotel_start_no;
+                                                i++)
+                                              const Icon(
                                                 Icons.star,
                                                 color: Color(0xffDFE6E9),
                                                 size: 15,
@@ -224,20 +230,20 @@ class _LastPageState extends State<LastPage> {
                                     )
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 16,
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "5",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 12),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, right: 25),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 5, right: 25),
                                       child: Icon(
                                         Icons.star,
                                         color: Color(0xff00CEC9),
@@ -247,22 +253,24 @@ class _LastPageState extends State<LastPage> {
                                     Container(
                                       width: 230,
                                       height: 8,
-                                      color: Color(0xff00CEC9),
+                                      color: const Color(0xff00CEC9),
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 3,),
+                                const SizedBox(
+                                  height: 3,
+                                ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "4",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 12),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, right: 25),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 5, right: 25),
                                       child: Icon(
                                         Icons.star,
                                         color: Color(0xff00CEC9),
@@ -272,22 +280,24 @@ class _LastPageState extends State<LastPage> {
                                     Container(
                                       width: 30,
                                       height: 8,
-                                      color: Color(0xff00CEC9),
+                                      color: const Color(0xff00CEC9),
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 3,),
+                                const SizedBox(
+                                  height: 3,
+                                ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "3",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 12),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, right: 25),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 5, right: 25),
                                       child: Icon(
                                         Icons.star,
                                         color: Color(0xff00CEC9),
@@ -297,22 +307,24 @@ class _LastPageState extends State<LastPage> {
                                     Container(
                                       width: 6,
                                       height: 8,
-                                      color: Color(0xff00CEC9),
+                                      color: const Color(0xff00CEC9),
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 3,),
+                                const SizedBox(
+                                  height: 3,
+                                ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "2",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 12),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, right: 25),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 5, right: 25),
                                       child: Icon(
                                         Icons.star,
                                         color: Color(0xff00CEC9),
@@ -322,22 +334,24 @@ class _LastPageState extends State<LastPage> {
                                     Container(
                                       width: 0,
                                       height: 8,
-                                      color: Color(0xff00CEC9),
+                                      color: const Color(0xff00CEC9),
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 3,),
+                                const SizedBox(
+                                  height: 3,
+                                ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "1",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 12),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, right: 25),
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(left: 5, right: 25),
                                       child: Icon(
                                         Icons.star,
                                         color: Color(0xff00CEC9),
@@ -347,7 +361,7 @@ class _LastPageState extends State<LastPage> {
                                     Container(
                                       width: 1,
                                       height: 8,
-                                      color: Color(0xff00CEC9),
+                                      color: const Color(0xff00CEC9),
                                     )
                                   ],
                                 )
@@ -355,12 +369,12 @@ class _LastPageState extends State<LastPage> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             Text(
                               'Hotel details',
                               style: TextStyle(
@@ -377,40 +391,44 @@ class _LastPageState extends State<LastPage> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         SizedBox(
                           height: 110,
                           child: ListView.builder(
-                            itemCount: hotelPhoto.length,
+                              itemCount: hotelPhoto.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
                                 return Container(
                                   height: 110,
                                   width: 110,
-                                  margin: EdgeInsets.only(right: 10),
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Colors.blue,),
-                                  child: Image.asset(hotelPhoto[index], fit: BoxFit.cover,),
+                                  margin: const EdgeInsets.only(right: 10),
+                                  decoration: const BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10)),
+                                    color: Colors.blue,
+                                  ),
+                                  child: Image.asset(
+                                    hotelPhoto[index],
+                                    fit: BoxFit.cover,
+                                  ),
                                 );
                               }),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Container(
                             height: 2,
                             width: MediaQuery.of(context).size.width,
-                            color: Color(0xffDFE6E9)),
-                        SizedBox(
+                            color: const Color(0xffDFE6E9)),
+                        const SizedBox(
                           height: 30,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: const [
                             Text(
                               'Reviews (33)',
                               style: TextStyle(
@@ -427,14 +445,14 @@ class _LastPageState extends State<LastPage> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Container(
                             height: 2,
                             width: MediaQuery.of(context).size.width,
-                            color: Color(0xffDFE6E9)),
-                        SizedBox(
+                            color: const Color(0xffDFE6E9)),
+                        const SizedBox(
                           height: 20,
                         ),
                         Column(
@@ -445,15 +463,17 @@ class _LastPageState extends State<LastPage> {
                                 Container(
                                   height: 35,
                                   width: 35,
-                                  margin: EdgeInsets.only(right: 9, bottom: 11),
-                                  decoration: BoxDecoration(
+                                  margin: const EdgeInsets.only(
+                                      right: 9, bottom: 11),
+                                  decoration: const BoxDecoration(
                                       color: Colors.blueGrey,
                                       shape: BoxShape.circle,
-                                  image: DecorationImage(image: AssetImage('avatar_1.png'))),
+                                      image: DecorationImage(
+                                          image: AssetImage('avatar_1.png'))),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Kang Jhon",
                                       style: TextStyle(
@@ -471,29 +491,29 @@ class _LastPageState extends State<LastPage> {
                                     )
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Rating",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 12),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 7,
                                     ),
                                     Row(
                                       children: [
                                         for (int i = 0; i < 4; i++)
-                                          Icon(
+                                          const Icon(
                                             Icons.star,
                                             color: Color(0xff00CEC9),
                                             size: 15,
                                           ),
                                         for (int i = 0; i < 1; i++)
-                                          Icon(
+                                          const Icon(
                                             Icons.star,
                                             color: Color(0xffDFE6E9),
                                             size: 15,
@@ -504,27 +524,27 @@ class _LastPageState extends State<LastPage> {
                                 )
                               ],
                             ),
-                            Text(
+                            const Text(
                               "The rooms are nice and very tidy. the mattress is soft plus a soft blanket makes sleeping very comfortable",
                               style: TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 12),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 11,
                             ),
-                            Text(
+                            const Text(
                               "Reply",
                               style: TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 12),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 17,
                             ),
                             Container(
                                 height: 2,
                                 width: MediaQuery.of(context).size.width,
-                                color: Color(0xffDFE6E9)),
-                            SizedBox(
+                                color: const Color(0xffDFE6E9)),
+                            const SizedBox(
                               height: 20,
                             ),
                           ],
@@ -537,14 +557,18 @@ class _LastPageState extends State<LastPage> {
                                 Container(
                                   height: 35,
                                   width: 35,
-                                  margin: EdgeInsets.only(right: 9, bottom: 11),
-                                  decoration: BoxDecoration(
+                                  margin: const EdgeInsets.only(
+                                      right: 9, bottom: 11),
+                                  decoration: const BoxDecoration(
                                       color: Colors.blueGrey,
-                                      shape: BoxShape.circle, image: DecorationImage(image: AssetImage("avatar_2.png"), fit: BoxFit.cover)),
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                          image: AssetImage("avatar_2.png"),
+                                          fit: BoxFit.cover)),
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Text(
                                       "Kang Ecap",
                                       style: TextStyle(
@@ -562,29 +586,29 @@ class _LastPageState extends State<LastPage> {
                                     )
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Rating",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 12),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 7,
                                     ),
                                     Row(
                                       children: [
                                         for (int i = 0; i < 4; i++)
-                                          Icon(
+                                          const Icon(
                                             Icons.star,
                                             color: Color(0xff00CEC9),
                                             size: 15,
                                           ),
                                         for (int i = 0; i < 1; i++)
-                                          Icon(
+                                          const Icon(
                                             Icons.star,
                                             color: Color(0xffDFE6E9),
                                             size: 15,
@@ -595,26 +619,26 @@ class _LastPageState extends State<LastPage> {
                                 )
                               ],
                             ),
-                            Text(
+                            const Text(
                               "I'm very happy with the view that can be seen from inside the hotel",
                               style: TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 12),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 11,
                             ),
-                            Text(
+                            const Text(
                               "Reply",
                               style: TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 12),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 17,
                             ),
                             Container(
                                 height: 2,
                                 width: MediaQuery.of(context).size.width,
-                                color: Color(0xffDFE6E9)),
+                                color: const Color(0xffDFE6E9)),
                           ],
                         ),
                       ],
@@ -624,7 +648,7 @@ class _LastPageState extends State<LastPage> {
                     children: [
                       Container(
                         height: 270,
-                        margin: EdgeInsets.only(bottom: 40),
+                        margin: const EdgeInsets.only(bottom: 40),
                         child: Image.asset(
                           'map.png',
                           fit: BoxFit.cover,
@@ -636,10 +660,10 @@ class _LastPageState extends State<LastPage> {
                           child: Container(
                             height: 30,
                             width: 30,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 color: Color(0xff00CEC9),
                                 shape: BoxShape.circle),
-                            child: Center(
+                            child: const Center(
                                 child: Icon(
                               Icons.location_on,
                               color: Colors.white,
@@ -650,11 +674,12 @@ class _LastPageState extends State<LastPage> {
                   InkWell(
                     child: Container(
                       height: 40,
-                      margin: EdgeInsets.only(left: 54, right: 54, bottom: 48),
-                      decoration: BoxDecoration(
+                      margin: const EdgeInsets.only(
+                          left: 54, right: 54, bottom: 48),
+                      decoration: const BoxDecoration(
                           color: Color(0xff00CEC9),
                           borderRadius: BorderRadius.all(Radius.circular(30))),
-                      child: Center(
+                      child: const Center(
                           child: Text(
                         'Reserve Room',
                         style: TextStyle(
@@ -663,40 +688,50 @@ class _LastPageState extends State<LastPage> {
                             fontWeight: FontWeight.w400),
                       )),
                     ),
-                    onTap: (){
+                    onTap: () {
                       showDialog(
                           context: context,
-                          builder: (context){
+                          builder: (context) {
                             return Dialog(
                               backgroundColor: Colors.transparent,
                               child: Container(
                                 width: 310,
                                 height: 377,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     color: Colors.white,
-                                    borderRadius: BorderRadius.all(Radius.circular(30))
-                                ),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(30))),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text("Accepted", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),),
-                                    SizedBox(height: 32,),
+                                    const Text(
+                                      "Accepted",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                    const SizedBox(
+                                      height: 32,
+                                    ),
                                     Container(
                                       height: 100,
                                       width: 100,
                                       decoration: BoxDecoration(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        borderRadius: BorderRadius.all(Radius.circular(30))
-                                      ),
-                                      child: Center(child: Text("👍", style: TextStyle(fontSize: 40),)),
+                                          color: Colors.grey.withOpacity(0.5),
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(30))),
+                                      child: const Center(
+                                          child: Text(
+                                        "👍",
+                                        style: TextStyle(fontSize: 40),
+                                      )),
                                     )
                                   ],
                                 ),
                               ),
                             );
-                          }
-                      );
+                          });
                     },
                   )
                 ],

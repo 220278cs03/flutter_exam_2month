@@ -50,8 +50,10 @@ class _MainPageState extends State<MainPage> {
         city_photo:
             'https://www.travelanddestinations.com/wp-content/uploads/2019/06/Istanbul-skyline.jpg',
         country: 'Turkey',
-        country_photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj2bu6WlQpVdPsutMr4Z9MYaACVFawtUxKZA-SvxGAJ2w5xo9JXoHZkHxUs7E4WLSCE3E&usqp=CAU',
-        hotel_photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOlru1FopXxFs47m0QMcPkFTzu20eVVDfRSmgSln7KM-PJKou90qwU_sUcuWLAqkZovLk&usqp=CAU',
+        country_photo:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj2bu6WlQpVdPsutMr4Z9MYaACVFawtUxKZA-SvxGAJ2w5xo9JXoHZkHxUs7E4WLSCE3E&usqp=CAU',
+        hotel_photo:
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOlru1FopXxFs47m0QMcPkFTzu20eVVDfRSmgSln7KM-PJKou90qwU_sUcuWLAqkZovLk&usqp=CAU',
         hotel_name: 'Mandarin Oriental',
         hotel_location: 'Bang Rak, Bangkok 10500, Thailand',
         hotel_oriyenter: '(759mm) 48 Oriental Ave',
@@ -64,7 +66,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Column(
@@ -72,7 +74,7 @@ class _MainPageState extends State<MainPage> {
               Container(
                 width: double.infinity,
                 height: 441,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('home.png'), fit: BoxFit.cover),
                 ),
@@ -82,84 +84,101 @@ class _MainPageState extends State<MainPage> {
                   child: Column(
                     children: [
                       Row(children: [
-                        Spacer(),
+                        InkWell(
+                          child: const Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        const Spacer(),
                         Container(
                           height: 43,
                           width: 43,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage('avatar_1.png')),
                               shape: BoxShape.circle),
                         )
                       ]),
-                      Spacer(),
+                      const Spacer(),
                       Row(children: [
                         Container(
                             width: 161,
-                            child: Text(
+                            child: const Text(
                               "Where are you going next?",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 22),
                             )),
-                        Spacer()
+                        const Spacer()
                       ])
                     ],
                   ),
                 ),
               ),
               Expanded(
-                 child: SingleChildScrollView(
+                child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 30.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 141,
                         ),
-                        Text(
+                        const Text(
                           "Recommended List",
                           style: TextStyle(
                               fontSize: 19, fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 33,
                         ),
                         Container(
                           height: 188,
                           child: ListView.builder(
-                              itemCount:  listOfModels.length,
+                              itemCount: listOfModels.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
                                 return Container(
                                   height: 188,
                                   width: 155,
-                                  margin: EdgeInsets.only(right: 16),
+                                  margin: const EdgeInsets.only(right: 16),
                                   decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(20)),
                                       boxShadow: [
                                         BoxShadow(
-                                            offset: Offset(0, 4),
+                                            offset: const Offset(0, 4),
                                             spreadRadius: 0,
                                             blurRadius: 4,
-                                            color: Color(0xff000000)
+                                            color: const Color(0xff000000)
                                                 .withOpacity(0.2))
                                       ]),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         height: 130,
                                         decoration: BoxDecoration(
                                             color: Colors.blue,
-                                            borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(20),
-                                                topRight: Radius.circular(20)),
-                                        image: DecorationImage(image: NetworkImage(listOfModels[index].city_photo),fit: BoxFit.cover)),
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                                    topLeft:
+                                                        Radius.circular(20),
+                                                    topRight:
+                                                        Radius.circular(20)),
+                                            image: DecorationImage(
+                                                image: NetworkImage(
+                                                    listOfModels[index]
+                                                        .city_photo),
+                                                fit: BoxFit.cover)),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.only(
@@ -168,16 +187,16 @@ class _MainPageState extends State<MainPage> {
                                           children: [
                                             Text(
                                               listOfModels[index].city,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   fontWeight: FontWeight.w700,
                                                   fontSize: 16),
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               height: 3,
                                             ),
                                             Text(
                                               listOfModels[index].subcity,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   fontWeight: FontWeight.w400,
                                                   fontSize: 12),
                                             ),
@@ -189,59 +208,65 @@ class _MainPageState extends State<MainPage> {
                                 );
                               }),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 38,
                         ),
-                        Text("Popular Destination",
+                        const Text("Popular Destination",
                             style: TextStyle(
                                 fontSize: 19, fontWeight: FontWeight.w700)),
-                        SizedBox(
+                        const SizedBox(
                           height: 33,
                         ),
                         SizedBox(
                           height: 188,
                           child: ListView.builder(
-                            itemCount: listOfModels.length,
+                              itemCount: listOfModels.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
                                 return Container(
                                     height: 188,
                                     width: 291,
-                                    margin: EdgeInsets.only(right: 22),
-                                    padding: EdgeInsets.only(top: 11, left: 18),
+                                    margin: const EdgeInsets.only(right: 22),
+                                    padding: const EdgeInsets.only(
+                                        top: 11, left: 18),
                                     decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(20)),
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(20)),
                                         color: Colors.yellow,
-                                    image: DecorationImage(image: NetworkImage(listOfModels[index].country_photo), fit: BoxFit.cover)),
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                                listOfModels[index]
+                                                    .country_photo),
+                                            fit: BoxFit.cover)),
                                     child: Text(
                                       listOfModels[index].country,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: Colors.white,
                                           fontSize: 22,
                                           fontWeight: FontWeight.w700),
                                     ));
                               }),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 38,
                         ),
-                        Text('Best Deals',
+                        const Text('Best Deals',
                             style: TextStyle(
                                 fontSize: 19, fontWeight: FontWeight.w700)),
                         SizedBox(
                           height: 400,
                           child: ListView.builder(
-                            itemCount: listOfModels.length,
-                              padding: EdgeInsets.only(right: 30, top: 20),
+                              itemCount: listOfModels.length,
+                              padding:
+                                  const EdgeInsets.only(right: 30, top: 20),
                               itemBuilder: (context, index) {
                                 return InkWell(
                                   child: Container(
                                     height: 134,
-                                    margin: EdgeInsets.only(bottom: 20),
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(20)),
+                                    margin: const EdgeInsets.only(bottom: 20),
+                                    decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)),
                                         color: Colors.white),
                                     child: Row(
                                       children: [
@@ -250,10 +275,17 @@ class _MainPageState extends State<MainPage> {
                                           height: 134,
                                           decoration: BoxDecoration(
                                               color: Colors.white,
-                                              borderRadius: BorderRadius.only(
-                                                  topLeft: Radius.circular(20),
-                                                  bottomLeft: Radius.circular(20)),
-                                          image: DecorationImage(image: NetworkImage(listOfModels[index].hotel_photo), fit: BoxFit.cover)),
+                                              borderRadius:
+                                                  const BorderRadius.only(
+                                                      topLeft:
+                                                          Radius.circular(20),
+                                                      bottomLeft:
+                                                          Radius.circular(20)),
+                                              image: DecorationImage(
+                                                  image: NetworkImage(
+                                                      listOfModels[index]
+                                                          .hotel_photo),
+                                                  fit: BoxFit.cover)),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
@@ -263,83 +295,94 @@ class _MainPageState extends State<MainPage> {
                                             children: [
                                               Text(
                                                 listOfModels[index].hotel_name,
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontWeight: FontWeight.w700,
                                                     fontSize: 14),
                                               ),
-                                              SizedBox(
+                                              const SizedBox(
                                                 height: 5,
                                               ),
                                               Text(
-                                                listOfModels[index].hotel_location,
-                                                style: TextStyle(
+                                                listOfModels[index]
+                                                    .hotel_location,
+                                                style: const TextStyle(
                                                     fontWeight: FontWeight.w400,
                                                     fontSize: 9),
                                               ),
-                                              Spacer(),
+                                              const Spacer(),
                                               Row(
                                                 children: [
                                                   Column(
                                                     crossAxisAlignment:
-                                                        CrossAxisAlignment.start,
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       Row(
                                                         children: [
-                                                          Icon(
+                                                          const Icon(
                                                             Icons.location_on,
-                                                            color:
-                                                                Color(0xff00CEC9),
+                                                            color: Color(
+                                                                0xff00CEC9),
                                                             size: 15,
                                                           ),
                                                           Text(
-                                                            listOfModels[index].hotel_oriyenter,
-                                                            style: TextStyle(
+                                                            listOfModels[index]
+                                                                .hotel_oriyenter,
+                                                            style: const TextStyle(
                                                                 fontWeight:
-                                                                    FontWeight.w400,
+                                                                    FontWeight
+                                                                        .w400,
                                                                 fontSize: 9),
                                                           ),
                                                         ],
                                                       ),
-                                                      SizedBox(
+                                                      const SizedBox(
                                                         height: 12,
                                                       ),
                                                       Row(
                                                         children: [
                                                           for (int i = 0;
-                                                              i < listOfModels[index].hotel_star_yes;
+                                                              i <
+                                                                  listOfModels[
+                                                                          index]
+                                                                      .hotel_star_yes;
                                                               i++)
-                                                            Icon(
+                                                            const Icon(
                                                               Icons.star,
-                                                              color:
-                                                                  Color(0xff00CEC9),
+                                                              color: Color(
+                                                                  0xff00CEC9),
                                                               size: 15,
                                                             ),
                                                           for (int i = 0;
-                                                          i < listOfModels[index].hotel_start_no;
-                                                          i++)
-                                                            Icon(
+                                                              i <
+                                                                  listOfModels[
+                                                                          index]
+                                                                      .hotel_start_no;
+                                                              i++)
+                                                            const Icon(
                                                               Icons.star,
-                                                              color:
-                                                              Color(0xffDFE6E9),
+                                                              color: Color(
+                                                                  0xffDFE6E9),
                                                               size: 15,
                                                             )
                                                         ],
                                                       )
                                                     ],
                                                   ),
-                                                  SizedBox(
+                                                  const SizedBox(
                                                     width: 19,
                                                   ),
                                                   Column(
                                                     children: [
                                                       Text(
-                                                        listOfModels[index].hotel_cost,
-                                                        style: TextStyle(
+                                                        listOfModels[index]
+                                                            .hotel_cost,
+                                                        style: const TextStyle(
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             fontSize: 14),
                                                       ),
-                                                      Text(
+                                                      const Text(
                                                         'Per Night',
                                                         style: TextStyle(
                                                             fontWeight:
@@ -356,8 +399,12 @@ class _MainPageState extends State<MainPage> {
                                       ],
                                     ),
                                   ),
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (_)=> LastPage(model: listOfModels[index])));
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) => LastPage(
+                                                model: listOfModels[index])));
                                   },
                                 );
                               }),
@@ -377,13 +424,13 @@ class _MainPageState extends State<MainPage> {
               width: 354,
               decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.8),
-                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  borderRadius: const BorderRadius.all(Radius.circular(30)),
                   boxShadow: [
                     BoxShadow(
-                        offset: Offset(0, 4),
+                        offset: const Offset(0, 4),
                         blurRadius: 4,
                         spreadRadius: 0,
-                        color: Color(0xff000000).withOpacity(0.25))
+                        color: const Color(0xff000000).withOpacity(0.25))
                   ]),
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
@@ -395,65 +442,67 @@ class _MainPageState extends State<MainPage> {
                         decoration: InputDecoration(
                             fillColor: Colors.white,
                             filled: true,
-                            border: OutlineInputBorder(
+                            border: const OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30)),
                                 borderSide: BorderSide.none),
-                            contentPadding: EdgeInsets.only(
+                            contentPadding: const EdgeInsets.only(
                                 top: 16, bottom: 16, left: 22),
                             prefixIcon: Icon(
                               Icons.search,
-                              color: Color(0xff000000).withOpacity(0.5),
+                              color: const Color(0xff000000).withOpacity(0.5),
                             ),
                             hintText: "Seacrh",
                             hintStyle: TextStyle(
-                                color: Color(0xff000000).withOpacity(0.5),
+                                color: const Color(0xff000000).withOpacity(0.5),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400)),
                       ),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(30)),
                           boxShadow: [
                             BoxShadow(
                                 spreadRadius: 0,
                                 blurRadius: 4,
-                                offset: Offset(0, 4),
-                                color: Color(0xff000000).withOpacity(0.25))
+                                offset: const Offset(0, 4),
+                                color:
+                                    const Color(0xff000000).withOpacity(0.25))
                           ]),
                     ),
                     Row(
                       children: [
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               'Flight Date',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 14),
                             ),
-                            Text(
+                            const Text(
                               '13 Jul - 18 Jul',
                               style: TextStyle(
                                   fontWeight: FontWeight.w600, fontSize: 16),
                             )
                           ],
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                           height: 42,
                           width: 1,
-                          color: Color(0xffDFE6E9),
+                          color: const Color(0xffDFE6E9),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Column(
                           children: [
-                            Text(
+                            const Text(
                               'Number of Person',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400, fontSize: 14),
                             ),
-                            Text(
+                            const Text(
                               '1 Room - 2 Person',
                               style: TextStyle(
                                   fontWeight: FontWeight.w600, fontSize: 16),
@@ -463,19 +512,20 @@ class _MainPageState extends State<MainPage> {
                       ],
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(vertical: 15),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       decoration: BoxDecoration(
-                          color: Color(0xff00CEC9),
+                          color: const Color(0xff00CEC9),
                           boxShadow: [
                             BoxShadow(
                                 spreadRadius: 0,
                                 blurRadius: 4,
-                                offset: Offset(0, 4),
-                                color: Color(0xff000000).withOpacity(0.25))
+                                offset: const Offset(0, 4),
+                                color:
+                                    const Color(0xff000000).withOpacity(0.25))
                           ],
                           borderRadius:
-                              BorderRadius.all(Radius.circular(30))),
-                      child: Center(
+                              const BorderRadius.all(Radius.circular(30))),
+                      child: const Center(
                         child: Text(
                           "Today's Promo",
                           style: TextStyle(
@@ -493,13 +543,13 @@ class _MainPageState extends State<MainPage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Color(0xff00CEC9),
-        unselectedItemColor: Color(0xff000000).withOpacity(0.5),
+        selectedItemColor: const Color(0xff00CEC9),
+        unselectedItemColor: const Color(0xff000000).withOpacity(0.5),
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          const BottomNavigationBarItem(
               icon: Icon(Icons.notifications_none), label: 'Notification'),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Icon(Icons.person_outline), label: 'Profile'),
         ],
       ),

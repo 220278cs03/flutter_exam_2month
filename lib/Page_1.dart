@@ -16,7 +16,7 @@ class _Page_1State extends State<Page_1> {
       child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('first_page.png'), fit: BoxFit.cover)),
           child: Padding(
@@ -24,14 +24,15 @@ class _Page_1State extends State<Page_1> {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.all(5.2),
+                  padding: const EdgeInsets.all(5.2),
                   decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.55),
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(15))),
                   child: Image.asset('building.png'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 11),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 11),
                   child: Text("Peshot",
                       style: TextStyle(
                           color: Colors.black,
@@ -40,7 +41,7 @@ class _Page_1State extends State<Page_1> {
                           decoration: TextDecoration.none),
                       textAlign: TextAlign.center),
                 ),
-                Text(
+                const Text(
                   "Welcome to peshot",
                   style: TextStyle(
                       color: Colors.black,
@@ -49,7 +50,7 @@ class _Page_1State extends State<Page_1> {
                       decoration: TextDecoration.none),
                   textAlign: TextAlign.center,
                 ),
-                Text(
+                const Text(
                   "Book easy and cheap hotels only on Peshot",
                   style: TextStyle(
                       color: Colors.black,
