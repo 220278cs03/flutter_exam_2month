@@ -397,6 +397,7 @@ class _LastPageState extends State<LastPage> {
                         SizedBox(
                           height: 110,
                           child: ListView.builder(
+                              physics: BouncingScrollPhysics(),
                               itemCount: hotelPhoto.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {

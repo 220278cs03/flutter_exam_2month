@@ -84,15 +84,6 @@ class _MainPageState extends State<MainPage> {
                   child: Column(
                     children: [
                       Row(children: [
-                        InkWell(
-                          child: const Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                          ),
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                        ),
                         const Spacer(),
                         Container(
                           height: 43,
@@ -141,6 +132,7 @@ class _MainPageState extends State<MainPage> {
                         Container(
                           height: 188,
                           child: ListView.builder(
+                            physics: BouncingScrollPhysics(),
                               itemCount: listOfModels.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
@@ -220,6 +212,7 @@ class _MainPageState extends State<MainPage> {
                         SizedBox(
                           height: 188,
                           child: ListView.builder(
+                              physics: BouncingScrollPhysics(),
                               itemCount: listOfModels.length,
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (context, index) {
@@ -256,6 +249,7 @@ class _MainPageState extends State<MainPage> {
                         SizedBox(
                           height: 400,
                           child: ListView.builder(
+                              physics: BouncingScrollPhysics(),
                               itemCount: listOfModels.length,
                               padding:
                                   const EdgeInsets.only(right: 30, top: 20),
@@ -473,6 +467,7 @@ class _MainPageState extends State<MainPage> {
                     Row(
                       children: [
                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
                               'Flight Date',

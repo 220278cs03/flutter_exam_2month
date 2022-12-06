@@ -30,7 +30,7 @@ class _Page_4State extends State<Page_4> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xffFFFFFF).withOpacity(0.9),
         body: SingleChildScrollView(
           padding: const EdgeInsets.only(
             left: 30,
